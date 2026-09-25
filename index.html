@@ -1,14 +1,562 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CADwithSohel - Jewellery CAD Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CADwithSohel | Jewellery CAD Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 11, 13, 0.95);
+      border-bottom: 1px solid #26262b;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.05), transparent 35%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 620px;
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .hero-card {
+      min-height: 360px;
+      border: 1px solid #2a2a30;
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, #17171b, #0d0d0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+    }
+
+    .hero-card h3 {
+      color: #d4af37;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      margin: 0;
+    }
+
+    /* SECTION */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #999;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .box {
+      background: #131317;
+      border: 1px solid #29292e;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .box h3 {
+      color: #d4af37;
+      margin-bottom: 14px;
+    }
+
+    .box p {
+      color: #aaa;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: #131317;
+      border: 1px solid #29292e;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .skill strong {
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 220px;
+      border-radius: 16px;
+      border: 1px solid #29292e;
+      background:
+        linear-gradient(145deg, #1b1b20, #101013);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project .icon {
+      font-size: 46px;
+      margin-bottom: auto;
+    }
+
+    .project h3 {
+      margin-bottom: 5px;
+    }
+
+    .project p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* 3D */
+    .viewer {
+      min-height: 330px;
+      border: 1px solid #38383e;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle, rgba(212,175,55,0.12), transparent 40%),
+        #111114;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .viewer h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .viewer p {
+      color: #999;
+      max-width: 600px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #131317;
+      border: 1px solid #29292e;
+      border-radius: 18px;
+      padding: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      margin: 12px 0 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #222;
+      padding: 25px 0;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills,
+      .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .skills,
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>CADwithSohel</h1>
-  <h2>Jewellery CAD Portfolio</h2>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">CAD<span>with</span>Sohel</div>
 
-  <p>Welcome to my jewellery CAD portfolio.</p>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#3d">3D</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div>
+        <h2>Jewellery CAD Designer</h2>
+
+        <h1>
+          CAD<span>with</span>Sohel
+        </h1>
+
+        <p>
+          Welcome to my jewellery CAD portfolio.
+          Explore my jewellery designs, Matrix CAD work,
+          stone-setting projects and upcoming 3D showcases.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#portfolio">View My Work</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div>
+          <h3>JEWELLERY CAD</h3>
+          <p>Matrix 9 • CAD Design • 3D Jewellery</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>My jewellery CAD journey and design focus</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="box">
+          <h3>Jewellery CAD</h3>
+          <p>
+            I am building my skills in jewellery CAD design with
+            a focus on practical production-oriented modelling,
+            stone placement and clean jewellery construction.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>Matrix 9</h3>
+          <p>
+            My work includes rings, bracelets, bangles, pendants
+            and stone-setting designs created and practised in Matrix 9.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Current jewellery CAD skill areas</p>
+      </div>
+
+      <div class="skills">
+
+        <div class="skill">
+          💍
+          <strong>Ring Design</strong>
+        </div>
+
+        <div class="skill">
+          🔗
+          <strong>Bracelet Design</strong>
+        </div>
+
+        <div class="skill">
+          ⭕
+          <strong>Bangle Design</strong>
+        </div>
+
+        <div class="skill">
+          💎
+          <strong>Stone Setting</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Portfolio</h2>
+        <p>Jewellery projects and CAD practice work</p>
+      </div>
+
+      <div class="portfolio">
+
+        <div class="project">
+          <div class="icon">💍</div>
+          <h3>Rings</h3>
+          <p>CAD ring designs and setting projects</p>
+        </div>
+
+        <div class="project">
+          <div class="icon">🔗</div>
+          <h3>Bracelets</h3>
+          <p>Bracelet modelling and stone layouts</p>
+        </div>
+
+        <div class="project">
+          <div class="icon">⭕</div>
+          <h3>Bangles</h3>
+          <p>Bangle design and prong work</p>
+        </div>
+
+        <div class="project">
+          <div class="icon">💎</div>
+          <h3>Pendants</h3>
+          <p>Pendant modelling and finishing</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D -->
+  <section id="3d">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>3D Jewellery Showcase</h2>
+        <p>Interactive 3D models will be added here</p>
+      </div>
+
+      <div class="viewer">
+        <div>
+          <h3>3D Viewer Coming Soon</h3>
+          <p>
+            Matrix jewellery models will be added here later,
+            with rotate, zoom and full-screen viewing.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact">
+
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>For jewellery CAD work and portfolio enquiries</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Let's Connect</h3>
+
+        <p>
+          Email and WhatsApp contact details can be added here.
+        </p>
+
+        <a class="btn btn-primary" href="#">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 CADwithSohel — Jewellery CAD Portfolio
+  </footer>
 
 </body>
 </html>
