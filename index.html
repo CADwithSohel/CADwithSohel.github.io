@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -240,6 +241,17 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    /* PORTFOLIO IMAGE */
+    .project img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      display: block;
     }
 
     .project .icon {
@@ -479,24 +491,28 @@
 
       <div class="portfolio">
 
+        <!-- RING IMAGE -->
         <div class="project">
-          <div class="icon">💍</div>
+          <img src="ring-01.jpg" alt="Ring CAD Design">
           <h3>Rings</h3>
           <p>CAD ring designs and setting projects</p>
         </div>
 
+        <!-- BRACELET -->
         <div class="project">
           <div class="icon">🔗</div>
           <h3>Bracelets</h3>
           <p>Bracelet modelling and stone layouts</p>
         </div>
 
+        <!-- BANGLE -->
         <div class="project">
           <div class="icon">⭕</div>
           <h3>Bangles</h3>
           <p>Bangle design and prong work</p>
         </div>
 
+        <!-- PENDANT -->
         <div class="project">
           <div class="icon">💎</div>
           <h3>Pendants</h3>
@@ -560,3 +576,4 @@
 
 </body>
 </html>
+```
