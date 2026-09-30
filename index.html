@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>CADwithSohel | Jewellery CAD Portfolio</title>
-
   <style>
     * {
       margin: 0;
@@ -141,8 +139,7 @@
       min-height: 360px;
       border: 1px solid #2a2a30;
       border-radius: 22px;
-      background:
-        linear-gradient(145deg, #17171b, #0d0d0f);
+      background: linear-gradient(145deg, #17171b, #0d0d0f);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -223,45 +220,58 @@
       margin-top: 10px;
     }
 
-    /* PORTFOLIO */
-    .portfolio {
+    /* ========== NEW PORTFOLIO STYLES ========== */
+    .portfolio-section {
+      padding: 90px 0;
+    }
+
+    .portfolio-category {
+      margin-bottom: 60px;
+    }
+
+    .portfolio-category h3 {
+      color: #d4af37;
+      font-size: 26px;
+      margin-bottom: 25px;
+      border-left: 4px solid #d4af37;
+      padding-left: 15px;
+    }
+
+    .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .project {
-      min-height: 220px;
-      border-radius: 16px;
+    .portfolio-card {
+      background: #131317;
       border: 1px solid #29292e;
-      background:
-        linear-gradient(145deg, #1b1b20, #101013);
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      border-radius: 16px;
       overflow: hidden;
+      transition: 0.3s ease;
     }
 
-    .project img {
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: #d4af37;
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    }
+
+    .portfolio-card img {
       width: 100%;
-      height: 220px;
+      height: 240px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
       display: block;
     }
 
-    .project .icon {
-      font-size: 46px;
-      margin-bottom: auto;
+    .portfolio-card h4 {
+      padding: 15px 18px 5px;
+      font-size: 17px;
+      color: #fff;
     }
 
-    .project h3 {
-      margin-bottom: 5px;
-    }
-
-    .project p {
+    .portfolio-card p {
+      padding: 0 18px 18px;
       color: #999;
       font-size: 14px;
     }
@@ -326,8 +336,11 @@
         grid-template-columns: 1fr;
       }
 
-      .skills,
-      .portfolio {
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -348,7 +361,7 @@
       }
 
       .skills,
-      .portfolio {
+      .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
@@ -358,14 +371,12 @@
     }
   </style>
 </head>
-
 <body>
 
   <!-- NAVBAR -->
   <nav>
     <div class="container nav-inner">
       <div class="logo">CAD<span>with</span>Sohel</div>
-
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -380,47 +391,36 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="container hero-grid">
-
       <div>
         <h2>Jewellery CAD Designer</h2>
-
-        <h1>
-          CAD<span>with</span>Sohel
-        </h1>
-
+        <h1>CAD<span>with</span>Sohel</h1>
         <p>
           Welcome to my jewellery CAD portfolio.
           Explore my jewellery designs, Matrix CAD work,
           stone-setting projects and upcoming 3D showcases.
         </p>
-
         <div class="buttons">
           <a class="btn btn-primary" href="#portfolio">View My Work</a>
           <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
       </div>
-
       <div class="hero-card">
         <div>
           <h3>JEWELLERY CAD</h3>
           <p>Matrix 9 • CAD Design • 3D Jewellery</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-
       <div class="section-title">
         <h2>About Me</h2>
         <p>My jewellery CAD journey and design focus</p>
       </div>
-
       <div class="about-grid">
-
         <div class="box">
           <h3>Jewellery CAD</h3>
           <p>
@@ -429,7 +429,6 @@
             stone placement and clean jewellery construction.
           </p>
         </div>
-
         <div class="box">
           <h3>Matrix 9</h3>
           <p>
@@ -437,7 +436,6 @@
             and stone-setting designs created and practised in Matrix 9.
           </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -445,93 +443,132 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-
       <div class="section-title">
         <h2>My Skills</h2>
         <p>Current jewellery CAD skill areas</p>
       </div>
-
       <div class="skills">
-
         <div class="skill">
           💍
           <strong>Ring Design</strong>
         </div>
-
         <div class="skill">
           🔗
           <strong>Bracelet Design</strong>
         </div>
-
         <div class="skill">
           ⭕
           <strong>Bangle Design</strong>
         </div>
-
         <div class="skill">
           💎
           <strong>Stone Setting</strong>
         </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>My Portfolio</h2>
-        <p>Jewellery projects and CAD practice work</p>
-      </div>
-
-      <div class="portfolio">
-
-        <!-- RING IMAGE -->
-        <div class="project">
-          <img
-            src="https://raw.githubusercontent.com/CADwithSohel/CADwithSohel.github.io/main/ring-01.jpg"
-            alt="Ring CAD Design">
-          <h3>Rings</h3>
-          <p>CAD ring designs and setting projects</p>
-        </div>
-
-        <!-- BRACELET -->
-        <div class="project">
-          <div class="icon">🔗</div>
-          <h3>Bracelets</h3>
-          <p>Bracelet modelling and stone layouts</p>
-        </div>
-
-        <!-- BANGLE -->
-        <div class="project">
-          <div class="icon">⭕</div>
-          <h3>Bangles</h3>
-          <p>Bangle design and prong work</p>
-        </div>
-
-        <!-- PENDANT -->
-        <div class="project">
-          <div class="icon">💎</div>
-          <h3>Pendants</h3>
-          <p>Pendant modelling and finishing</p>
-        </div>
-
       </div>
     </div>
   </section>
+  
+  <!-- PORTFOLIO SECTION -->
+<section id="portfolio" class="portfolio-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Portfolio</h2>
+      <p>Jewellery projects and CAD practice work</p>
+    </div>
+    <!-- RINGS -->
+    <div class="portfolio-category">
+      <h3>Rings</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/ring-01.jpg" alt="Ring Design">
+          <h4>Ring Design 01</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/ring-02.jpg" alt="Ring Design">
+          <h4>Ring Design 02</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/ring-03.jpg" alt="Ring Design">
+          <h4>Ring Design 03</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+      </div>
+    </div>
+    <!-- BRACELETS -->
+    <div class="portfolio-category">
+      <h3>Bracelets</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/bracelet-01.jpg" alt="Bracelet Design">
+          <h4>Bracelet Design 01</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/bracelet-02.jpg" alt="Bracelet Design">
+          <h4>Bracelet Design 02</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/bracelet-03.jpg" alt="Bracelet Design">
+          <h4>Bracelet Design 03</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+      </div>
+    </div>
+    <!-- BANGLES -->
+    <div class="portfolio-category">
+      <h3>Bangles</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/bangle-01.jpg" alt="Bangle Design">
+          <h4>Bangle Design 01</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/bangle-02.jpg" alt="Bangle Design">
+          <h4>Bangle Design 02</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/bangle-03.jpg" alt="Bangle Design">
+          <h4>Bangle Design 03</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+      </div>
+    </div>
+    <!-- PENDANTS -->
+    <div class="portfolio-category">
+      <h3>Pendants</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/pendant-01.jpg" alt="Pendant Design">
+          <h4>Pendant Design 01</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/pendant-02.jpg" alt="Pendant Design">
+          <h4>Pendant Design 02</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/pendant-03.jpg" alt="Pendant Design">
+          <h4>Pendant Design 03</h4>
+          <p>Jewellery CAD Design</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- 3D -->
   <section id="3d">
     <div class="container">
-
       <div class="section-title">
         <h2>3D Jewellery Showcase</h2>
         <p>Interactive 3D models will be added here</p>
       </div>
-
       <div class="viewer">
         <div>
           <h3>3D Viewer Coming Soon</h3>
@@ -541,31 +578,23 @@
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container contact">
-
       <div class="section-title">
         <h2>Contact Me</h2>
         <p>For jewellery CAD work and portfolio enquiries</p>
       </div>
-
       <div class="contact-box">
         <h3>Let's Connect</h3>
-
         <p>
           Email and WhatsApp contact details can be added here.
         </p>
-
-        <a class="btn btn-primary" href="#">
-          Contact Me
-        </a>
+        <a class="btn btn-primary" href="#">Contact Me</a>
       </div>
-
     </div>
   </section>
 
