@@ -220,7 +220,7 @@
       margin-top: 10px;
     }
 
-    /* ========== NEW PORTFOLIO STYLES ========== */
+    /* PORTFOLIO */
     .portfolio-section {
       padding: 90px 0;
     }
@@ -262,18 +262,7 @@
       height: 240px;
       object-fit: cover;
       display: block;
-    }
-
-    .portfolio-card h4 {
-      padding: 15px 18px 5px;
-      font-size: 17px;
-      color: #fff;
-    }
-
-    .portfolio-card p {
-      padding: 0 18px 18px;
-      color: #999;
-      font-size: 14px;
+      cursor: pointer;
     }
 
     /* 3D */
@@ -327,6 +316,33 @@
       text-align: center;
       color: #777;
       font-size: 14px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      object-fit: contain;
+      pointer-events: none;
     }
 
     /* MOBILE */
@@ -467,100 +483,82 @@
       </div>
     </div>
   </section>
-  
+
   <!-- PORTFOLIO SECTION -->
-<section id="portfolio" class="portfolio-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>My Portfolio</h2>
-      <p>Jewellery projects and CAD practice work</p>
-    </div>
-    <!-- RINGS -->
-    <div class="portfolio-category">
-      <h3>Rings</h3>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="images/ring-01.jpg" alt="Ring Design">
-          <h4>Ring Design 01</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/ring-02.jpg" alt="Ring Design">
-          <h4>Ring Design 02</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/ring-03.jpg" alt="Ring Design">
-          <h4>Ring Design 03</h4>
-          <p>Jewellery CAD Design</p>
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Portfolio</h2>
+        <p>Jewellery projects and CAD practice work</p>
+      </div>
+
+      <!-- RINGS -->
+      <div class="portfolio-category">
+        <h3>Rings</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <img src="images/ring-01.jpg" alt="Ring Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/ring-02.jpg" alt="Ring Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/ring-03.jpg" alt="Ring Design">
+          </div>
         </div>
       </div>
-    </div>
-    <!-- BRACELETS -->
-    <div class="portfolio-category">
-      <h3>Bracelets</h3>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="images/bracelet-01.jpg" alt="Bracelet Design">
-          <h4>Bracelet Design 01</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/bracelet-02.jpg" alt="Bracelet Design">
-          <h4>Bracelet Design 02</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/bracelet-03.jpg" alt="Bracelet Design">
-          <h4>Bracelet Design 03</h4>
-          <p>Jewellery CAD Design</p>
+
+      <!-- BRACELETS -->
+      <div class="portfolio-category">
+        <h3>Bracelets</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <img src="images/bracelet-01.jpg" alt="Bracelet Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/bracelet-02.jpg" alt="Bracelet Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/bracelet-03.jpg" alt="Bracelet Design">
+          </div>
         </div>
       </div>
-    </div>
-    <!-- BANGLES -->
-    <div class="portfolio-category">
-      <h3>Bangles</h3>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="images/bangle-01.jpg" alt="Bangle Design">
-          <h4>Bangle Design 01</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/bangle-02.jpg" alt="Bangle Design">
-          <h4>Bangle Design 02</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/bangle-03.jpg" alt="Bangle Design">
-          <h4>Bangle Design 03</h4>
-          <p>Jewellery CAD Design</p>
+
+      <!-- BANGLES -->
+      <div class="portfolio-category">
+        <h3>Bangles</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <img src="images/bangle-01.jpg" alt="Bangle Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/bangle-02.jpg" alt="Bangle Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/bangle-03.jpg" alt="Bangle Design">
+          </div>
         </div>
       </div>
-    </div>
-    <!-- PENDANTS -->
-    <div class="portfolio-category">
-      <h3>Pendants</h3>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="images/pendant-01.jpg" alt="Pendant Design">
-          <h4>Pendant Design 01</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/pendant-02.jpg" alt="Pendant Design">
-          <h4>Pendant Design 02</h4>
-          <p>Jewellery CAD Design</p>
-        </div>
-        <div class="portfolio-card">
-          <img src="images/pendant-03.jpg" alt="Pendant Design">
-          <h4>Pendant Design 03</h4>
-          <p>Jewellery CAD Design</p>
+
+      <!-- PENDANTS -->
+      <div class="portfolio-category">
+        <h3>Pendants</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <img src="images/pendant-01.jpg" alt="Pendant Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/pendant-02.jpg" alt="Pendant Design">
+          </div>
+          <div class="portfolio-card">
+            <img src="images/pendant-03.jpg" alt="Pendant Design">
+          </div>
         </div>
       </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- 3D -->
   <section id="3d">
@@ -602,6 +600,27 @@
   <footer>
     © 2026 CADwithSohel — Jewellery CAD Portfolio
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Preview">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.portfolio-card img').forEach(img => {
+      img.addEventListener('click', function() {
+        lightboxImg.src = this.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+    });
+  </script>
 
 </body>
 </html>
